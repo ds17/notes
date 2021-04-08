@@ -26,8 +26,8 @@ int reference2const(){
     const int &r1 = i;     //正确
     const int &r2 = 4.12;   //正确
     const int &r3 = r1 *2;   //正确：常量引用的初始值可以是任意表达式或初始值
-    int &r4 = r1 *2;  //错误：非常量引用的类型必须一致，等号右边的类型是一个常量引用
-    int &r5 = 4;  //错误：非常量引用的初始值类型必须为左值
+    // int &r4 = r1 *2;  //错误：非常量引用的类型必须一致，等号右边的类型是一个常量引用
+    // int &r5 = 4;  //错误：非常量引用的初始值类型必须为左值
 
     return 0;
 }
@@ -78,4 +78,15 @@ int pointerVSconst(){
     const double *const ptr_c_di = &c_di; //一个指向双精度常量对象的常量指针，从右往左阅读
 
     return 0;
+}
+
+//顶层、底层const
+//顶层const：对象本身是个常量
+//底层const：指针所指对象是一个常量
+int topLowConst(){
+    int i = 0;
+    int *const p1 = &i;  //不允许改变p1的值，这个一个顶层const
+    const int ci = 42;   //不允许改变ci的值，这是一个顶层const
+    const int *p2 = &ci; //允许改变p2的值，这是一个底层const
+    const int &r = ci;  //声明引用的const都是底层const
 }

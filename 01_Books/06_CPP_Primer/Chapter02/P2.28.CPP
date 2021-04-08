@@ -16,7 +16,10 @@ int main()
     // const int *const p3; //错误：常量需要初始化
     const int *const p3 = &ic; //正确
 
-    const int *p; //常量许需要初始化，为什么没报错？？
+    const int *p4; //正确，常量需要初始化，为什么没报错？？
+    // const int kk;  //错误，常量需要初始化
+
+    cout << p4;  //输出：0
     
     // p1 = p3; //错误
 
