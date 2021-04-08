@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int const1(), const2(), pointerVSconst(), reference2const();
+int const1(), const2(), pointerVSconst(), reference2const(), topLowConst();
 int main()
 {
     // const1();
@@ -15,8 +15,8 @@ int main()
 	return 0;
 	}
 
+//常量的引用
 int reference2const(){
-    //常量的引用
     //常量引用允许等号两边类型不一致 → 类型转换
     double val =3.14;
     const int &ri = val; //发生类型转换，编译时产生一个整型的临时量
