@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int const1(), const2(), pointerVSconst(), reference2const(), topLowConst();
+int const1(), const2(), pointerVSconst(), reference2const(), topLowConst(),
+    constexprf();
 int main()
 {
     // const1();
@@ -89,4 +90,15 @@ int topLowConst(){
     const int ci = 42;   //不允许改变ci的值，这是一个顶层const
     const int *p2 = &ci; //允许改变p2的值，这是一个底层const
     const int &r = ci;  //声明引用的const都是底层const
+}
+
+//2.4.4常量表达式
+int constexprf(){
+    //常量表达式：编译过程就能得到计算结果
+    //constexpr声明一个常量表达式，以便由编译器验证变量是否是一个常量表达式
+    constexpr int mf =20;
+    int i  = 1;
+    constexpr int limit = mf +2;
+
+    return 0;
 }
