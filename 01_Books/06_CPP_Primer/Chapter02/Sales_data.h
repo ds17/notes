@@ -13,11 +13,13 @@
 */
 
 #include <string>
-using namespace std;
+
 
 struct Sales_data
 {
-    string bookNo;
+    //头文件中不应使用using声明，因为头文件的内容会被包含到所有引用它的文件中
+    //如果引用头文件包含了using声明，会带来不可预料的后果
+    std::string bookNo;   
     unsigned int units_sold = 0;
     double revenue = 0;
 
