@@ -15,6 +15,6 @@ int main(){
         n /=10;
     } while (n!=0);
      
-    
+    cout << sizeof(int);
     return 0;
 }
