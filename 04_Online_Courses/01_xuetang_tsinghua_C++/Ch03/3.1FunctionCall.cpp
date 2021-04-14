@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cmath>
 #include <iomanip>
+#include <cmath>
+#include <cstdlib>
 // #include <string>
 // #include <cctype>
 // #include <vector>
@@ -9,6 +11,8 @@ using namespace std;
 double power(double x, int n);
 double s_acrtan(double x);
 bool huiWen(unsigned x);
+double tsin(double x);
+int rollDice();
 
 
 int main(){
@@ -38,13 +42,76 @@ int main(){
     // cout << pi << endl;
 
 //例3-4
-    for (unsigned m = 11; m<1000; m++){
-        if (huiWen(m) && huiWen(m*m) && huiWen(m*m*m)){
-            cout << "m= " << m ;
-            cout << "m*m= " << m*m ;
-            cout << "m*m*m= " << m*m*m << endl;
+    // for (unsigned m = 11; m<1000; m++){
+    //     if (huiWen(m) && huiWen(m*m) && huiWen(m*m*m)){
+    //         cout << "m= " << m ;
+    //         cout << "m*m= " << m*m ;
+    //         cout << "m*m*m= " << m*m*m << endl;
+    //     }
+    // }
+
+//例3-5 分段函数
+    // double k, r, s;
+    // cout << "r= ";
+    // cin >> r;
+    // cout << "s= " ;
+    // cin >> s;
+    // if (r*r <= s*s){
+    //     k =sqrt (tsin(r) * tsin(r) + tsin(s) * tsin(s));
+    // }else{
+    //     k = tsin(r*s) /2;
+    // }
+    // cout << k << endl;
+
+//例3.6掷骰子游戏
+    int sum, myPoint;
+    unsigned seed;
+    enum GameStatus {WIN, LOSE, PLAYING};
+    GameStatus status;
+
+    cout << "please enter an unsigned integer: ";
+    cin >> seed;
+    srand(seed);
+    sum = rollDice();
+
+    switch (sum)
+    {
+    case 7:
+    case 11:
+        status = WIN;
+        break;
+    case 2:
+    case 3:
+    case 12:
+        status = LOSE;
+        break;
+    default:
+        status = PLAYING;
+        myPoint = sum;
+        cout << "point is " << myPoint << endl;
+        break;
+    }
+
+    while (status == PLAYING)
+    {
+        sum = rollDice();
+        if (sum == myPoint){
+            status = WIN;
+        }else if (sum == 7)
+        {
+            status = LOSE;
         }
     }
+
+    if (status == WIN)
+    {
+        cout << "player wins" << endl;
+    }else{
+        cout << "player loses" << endl;
+    }
+    
+    
+
 
     cout << endl << endl;
     system("pause");
@@ -112,9 +179,31 @@ bool huiWen(unsigned x){
     return m == x;
 }
 
+//例3-5 分段函数的sinx
+double tsin(double x){
+    double r = 0;
+    const double tiny_number = 1e-10;
+    double f = x;
+    double sqr = x * x;
+    int n =1;
+    while (fabs(f) > tiny_number)
+    {
+        r += f;
+        n +=2;
+        f *= -sqr / n / (n-1);
+    }
+    return r;
+}
 
+//例3-6掷骰子
+int rollDice(){
+    int die1 = 1 + rand() % 6;  //rand返回一个随机的整数
+    int die2 = 1 + rand() % 6;
+    int sum = die1 + die2;
+    cout << "player rolled " << die1 << " + " << die2 << " = " << sum << endl;
 
-
+    return sum;
+}
 
 
 
