@@ -16,5 +16,8 @@ int main(){
     } while (n!=0);
      
     cout << sizeof(int);
+
+    cout << endl << endl;
+    system("pause");
     return 0;
 }
