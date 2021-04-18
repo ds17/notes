@@ -4,10 +4,11 @@ using namespace std;
 class Clock
 {
 private:
-    int hour = 0, minute = 0, second = 0;  //类内初始值
+    int hour = 1, minute = 1, second = 1;  //类内初始值
 public:
-    Clock() = default;
+    // Clock() = default;
     Clock(int newH, int newM, int newS);
+    Clock():Clock(2, 2, 2){}    //委托构造函数
     ~Clock();
     void setTime(int newH, int newM, int newS);
     void showTime();
@@ -34,9 +35,10 @@ void Clock::showTime(){
 int main(){
 
     Clock myClock;
-    myClock.setTime(8, 30, 30);
+    // myClock.setTime(8, 30, 30);
     myClock.showTime();
     cout << endl << endl;
     system("pause");
     return 0;
 }
+
