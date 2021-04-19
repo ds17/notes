@@ -9,6 +9,7 @@ private:
     int x, y;
 public:
     Point(int xx =0, int yy =0){
+        cout << "calling point class constructor function\n"; 
         x =xx;
         y = yy;
     }
@@ -19,6 +20,7 @@ public:
 
 
 Point::Point(Point &p){
+    cout << "point copy constructor\n"; 
     x = p.x;
     y = p.y;
 }
@@ -37,14 +39,14 @@ public:
 
 Line::Line(Point xp1, Point xp2):p1(xp1), p2(xp2)
 {
-    cout << "calling constructor of Line" << '\n';
+    cout << "calling line constructor " << '\n';
     double x = static_cast<double>(xp1.getX() - xp2.getX());
     double y = static_cast<double>(xp1.getY() - xp2.getY());
     len = sqrt(x*x + y*y);
 }
 
 Line::Line(Line &l){
-    cout << "calling the copy constructor of line" << '\n';
+    cout << "calling line copy constructor" << '\n';
     len =l.len;
     p1 = l.p1;
     p2 = l.p2;
