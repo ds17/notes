@@ -4,7 +4,7 @@
 #include <vector>
 
 using namespace std;
-int if_is_space(), if_is_empty();
+void if_is_space(), if_is_empty();
 
 int main(){
 
@@ -27,7 +27,7 @@ int main(){
 //空白字符：' ', '\n', "\t",检查字符是否是空白字符，用cctype中的isspace()
 
 //空白字符串判断
-int if_is_empty(){
+void if_is_empty(){
     string s;
     s = "";  //空字符串
     s = " "; //空白字符，非空字符串
@@ -41,7 +41,7 @@ int if_is_empty(){
 }
 
 //空白字符的判断
-int if_is_space(){
+void if_is_space(){
     char c = '\t';
     if (isspace(c)){
         cout << "empty character" << endl;   

@@ -8,7 +8,7 @@ using namespace std;
 int main(){
 
     
-    cout << endl << endl;
+    cout << "\n\n";
     system("pause");
     return 0;
 }
