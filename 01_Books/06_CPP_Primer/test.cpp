@@ -7,12 +7,11 @@ using namespace std;
 
 int main(){
 
-    int i = 1;
-    int *p = &i;
-    int **pp = &p;
+    vector<int> ivec(10,1);
+    cout << ivec.size() << "\n";
+    ivec.push_back(2);
+    cout << ivec.size() << "\n";
 
-    cout << p <<"\n";
-    cout << pp << "\n";
     cout << "\n\n";
     system("pause");
     return 0;
