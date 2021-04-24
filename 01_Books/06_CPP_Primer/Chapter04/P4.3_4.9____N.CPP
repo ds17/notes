@@ -1,15 +1,12 @@
 #include <iostream>
-#include <string>
-#include <cctype>
-#include <vector>
-
 using namespace std;
 
 int main()
 {
+    const char *cp = "hello word";
 
-    
-    cout << "\n\n";
+    cout << *cp ; //输出字符：h
+
     system("pause");
     return 0;
 }
