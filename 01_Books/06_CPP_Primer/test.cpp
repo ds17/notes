@@ -7,16 +7,10 @@ using namespace std;
 
 int main()
 {
-    vector<string> svec = {"hello", "\0", "this", "is", "good"};
-
-    // vector<string>::iterator iter = svec.begin();
-    auto iter = svec.begin();
-    // cout << (*iter).empty() << "\n";
-    // cout << iter->empty() << "\n";
-    // cout << *++iter <<"\n";
-    cout << (++iter)->empty() << "\n";
-    cout << iter->empty();
-
+    
+    double j =3.1415926;
+    int i =j;
+    cout << i;
 
 
     cout << "\n\n";
