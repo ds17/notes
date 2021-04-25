@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <cctype>
+// #include <cctype>
 #include <vector>
 
 using namespace std;
@@ -11,7 +11,11 @@ int main()
 
     // vector<string>::iterator iter = svec.begin();
     auto iter = svec.begin();
-    // cout << (*iter).empty() << "\n";
+
+//解引运算符的优先级低于点运算符
+//成员访问运算符：ptr->men  等价于  (*ptr).mem
+    // cout << (*iter).empty() << "\n";    
+
     // cout << iter->empty() << "\n";
     // cout << *++iter <<"\n";
     cout << (++iter)->empty() << "\n";
