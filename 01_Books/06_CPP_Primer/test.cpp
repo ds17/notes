@@ -8,11 +8,9 @@ using namespace std;
 int main()
 {
     
-    double j =3.1415926;
-    int i =j;
-    cout << i;
-
-
+    string s = "word";
+    string p1 = s + ((s[s.size() -1] == 's') ? "" : "s");
+    cout << p1 ;
     cout << "\n\n";
     system("pause");
     return 0;
