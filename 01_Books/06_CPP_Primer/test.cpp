@@ -7,9 +7,6 @@ using namespace std;
 
 int main()
 {
-    int i = 2, j =3;
-    double slope = static_cast<double>(j/i);
-    cout << slope;
 
     
     
