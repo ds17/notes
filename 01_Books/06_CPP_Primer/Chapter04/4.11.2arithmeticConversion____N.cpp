@@ -8,8 +8,13 @@ using namespace std;
 int main()
 {
     
-    cout << sizeof(bool) << "\n";               //1 Byte
+    cout << sizeof(bool) << "\n";               //1 Byte、
+
     cout << sizeof(char) << "\n";               //1 Byte
+    cout << sizeof(wchar_t) << "\n";            //2 Byte
+    cout << sizeof(char16_t) << "\n";           //2 Byte
+    cout << sizeof(char32_t) << "\n";           //4 Byte
+
 
     cout << sizeof(short) << "\n";              //2 Byte
     cout << sizeof(unsigned short) << "\n";     //2 Byte
