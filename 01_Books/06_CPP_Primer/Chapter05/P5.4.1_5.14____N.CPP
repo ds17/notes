@@ -6,12 +6,14 @@
 using namespace std;
 void myAnswer();
 void stdAnswer();
+void myAnswer2();
 
 int main()
 {
     //!两种不同的思路
     // myAnswer();
-    stdAnswer();
+    // stdAnswer();
+    myAnswer2();
     
     cout << "\n\n";
     system("pause");
@@ -85,4 +87,30 @@ void stdAnswer()
         cout << "Every string occurs 1 time \n";
     }
     
+}
+
+void myAnswer2()
+{
+    string current_s, pre_s, max_s;
+    cin >> pre_s;
+    unsigned int current_s_cnt=1, max_cnt = 1;
+    max_s = pre_s;
+    
+    while (cin >> current_s)
+    {
+        if (current_s == pre_s)
+        {
+            ++current_s_cnt;
+            if (current_s_cnt >= max_cnt)
+            {
+                max_cnt = current_s_cnt;
+                max_s = current_s;
+            }
+        }else
+        {
+            current_s_cnt = 1;
+        }
+        pre_s = current_s;
+    }    
+    cout << max_s << " occurs " << max_cnt << " times.";
 }
