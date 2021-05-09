@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
     Sales_item item1, item2;
-    cin >> item1 >> item2;
+    // cin >> item1 >> item2;
     // if (item1.isbn() == item2.isbn())
     // {
     //     cout << item1 +item2 << "\n";
@@ -23,11 +23,29 @@ int main()
     //     return -1;
     // }
 
-    if (item1.isbn() != item2.isbn())
-        throw runtime_error("Data must refer to same ISBN \n");
-        system("pause");
-    cout << item1 + item2 << "\n";
     
+    
+    while (cin >> item2 >> item2)
+    {
+        try
+        {
+            if (item1.isbn() != item2.isbn())
+                throw runtime_error("Data must refer to same ISBN \n");  
+            cout << item1 + item2 << "\n";
+        }
+        catch(runtime_error err)
+        {
+            cout << err.what()
+                << "\n Try again? Enter y or n \n" ;
+            char c;
+            cin >> c;
+            if (!cin || c == 'n') break;
+
+        }
+    }
+    
+
+
     cout << "\n\n";
     system("pause");
     return 0;
