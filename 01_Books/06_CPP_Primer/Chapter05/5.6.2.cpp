@@ -35,8 +35,8 @@ int main()
         }
         catch(runtime_error err)
         {
-            cout << err.what()
-                << "\n Try again? Enter y or n \n" ;
+            cout << err.what()   //err是 runtime_error 类型的变量，what() 是类的成员函数
+                << "\nTry again? Enter y or n \n" ;
             char c;
             cin >> c;
             if (!cin || c == 'n') break;
