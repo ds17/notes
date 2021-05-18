@@ -26,9 +26,11 @@ int main()
     cout << "\n\n";
     int *p1 = a1;
     int *p2 = a2;
-
+    cout << *(p1 +2) << "\n";
+    cout << *(p2 +2) << "\n";
     ptr_exchange(p1, p2);
-    
+    cout << *(p1 +2) << "\n";
+    cout << *(p2 +2) << "\n";
     
     cout << "\n\n";
     system("pause");
