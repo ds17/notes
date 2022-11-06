@@ -1,0 +1,10 @@
+-- Active: 1667037546767@@127.0.0.1@3306@bizhibihui
+--SELECT子句顺序
+/*
+SELECT
+FROM
+WHERE
+GRUOP BY
+HAVING
+ORDER BY
+*/
