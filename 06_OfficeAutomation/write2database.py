@@ -84,8 +84,8 @@ for sub_df in dfs:
     # connection.commit()
 
     # 用sqlalchemy写入数据库，用sqlalchemy写入的速度远比pymysql快
-    # 300万行数据，pymysql写入用了35分钟，sqlalchemy用时：8.9分钟
-    sub_df.to_sql(name=table_name, con=engine, if_exists='replace', index=False) # if_exists='replace' 会覆盖原来的数据
+    # 300万行数据，pymysql写入用了35分钟，sqlalchemy用时：4分钟
+    # sub_df.to_sql(name=table_name, con=engine, if_exists='replace', index=False) # if_exists='replace' 会覆盖原来的数据
     sub_df.to_sql(name=table_name, con=engine, if_exists='append', index=False) # if_exists='append' 会追加数据
 
     print(f"本次循环写入了 {rows} 行数据")
